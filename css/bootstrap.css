@@ -6563,4 +6563,10 @@ button.close {
     display: none !important;
   }
 }
+header {
+    background-image: url('../img/header-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */
