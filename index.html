@@ -214,14 +214,15 @@
 
       <!-- Modular Flat Pack Cabin Units -->
       <div class="col-lg-4 col-md-6 mb-5">
-        <div class="service-box">
-          <a href="pdf/Cabin.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <i class="fas fa-home fa-3x"></i>
-            <h4 class="mt-3" id="srv_cabin">Modular Flat Pack Cabin Units</h4>
-          </a>
-          <p id="srv_cabin_txt">Durable modular flat pack cabin units suitable for housing, offices, and site operations.</p>
-        </div>
-      </div>
+  <div class="service-box">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#cabinModal"
+       style="text-decoration:none; color:inherit;">
+      <i class="fas fa-home fa-3x"></i>
+      <h4 class="mt-3" id="srv_cabin">Modular Flat Pack Cabin Units</h4>
+    </a>
+    <p id="srv_cabin_txt">Durable modular flat pack cabin units suitable for housing, offices, and site operations.</p>
+  </div>
+</div>
 
       <!-- Aluminum Doors and Windows Glass -->
       <div class="col-lg-4 col-md-6 mb-5">
@@ -394,6 +395,49 @@
     </div>
   </div>
 </div>
+<!-- CABIN MODAL (PDF + VIDEO) -->
+<div class="modal fade" id="cabinModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cabin Units</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Video -->
+        <div class="ratio ratio-16x9 mb-3">
+          <video id="cabinVideo" controls preload="metadata">
+            <source src="video/CabinV.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex gap-2 justify-content-center">
+          <a class="btn btn-primary" href="pdf/Cabin.pdf" target="_blank">
+            <i class="fas fa-file-pdf me-2"></i> Open PDF
+          </a>
+
+          <a class="btn btn-outline-primary" href="video/CabinV.mp4" target="_blank">
+            <i class="fas fa-play me-2"></i> Open Video
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const cabinModal = document.getElementById('cabinModal');
+  cabinModal.addEventListener('hidden.bs.modal', () => {
+    const v = document.getElementById('cabinVideo');
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  });
+</script>
 
 
 </body>
