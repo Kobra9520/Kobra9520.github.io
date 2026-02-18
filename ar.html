@@ -214,15 +214,16 @@
       <!-- ===== باقي الخدمات (بعد الأثاث) ===== -->
 
       <!-- وحدات الكابينات الجاهزة -->
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="service-box">
-          <a href="pdf/Cabin.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <i class="fas fa-home fa-3x"></i>
-            <h4 class="mt-3">وحدات الكابينات الجاهزة</h4>
-          </a>
-          <p>وحدات كابينات جاهزة مناسبة للسكن والمكاتب والمشاريع الميدانية.</p>
-        </div>
-      </div>
+     <div class="col-lg-4 col-md-6 mb-5">
+  <div class="service-box">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#cabinModalAr"
+       style="text-decoration:none; color:inherit;">
+      <i class="fas fa-home fa-3x"></i>
+      <h4 class="mt-3">وحدات الكابينات الجاهزة</h4>
+    </a>
+    <p>وحدات كابينات جاهزة مناسبة للسكن والمكاتب والمشاريع الميدانية.</p>
+  </div>
+</div>
 
       <!-- أبواب ونوافذ الألمنيوم -->
       <div class="col-lg-4 col-md-6 mb-5">
@@ -383,6 +384,50 @@
     </div>
   </div>
 </div>
+<!-- CABIN MODAL AR (PDF + VIDEO) -->
+<div class="modal fade" id="cabinModalAr" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
 
+      <div class="modal-header">
+        <h5 class="modal-title">وحدات الكابينات</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Video -->
+        <div class="ratio ratio-16x9 mb-3">
+          <video id="cabinVideoAr" controls preload="metadata">
+            <source src="video/CabinV.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a class="btn btn-primary" href="pdf/Cabin.pdf" target="_blank">
+            <i class="fas fa-file-pdf ms-2"></i> فتح ملف PDF
+          </a>
+
+          <a class="btn btn-outline-primary" href="video/CabinV.mp4" target="_blank">
+            <i class="fas fa-play ms-2"></i> فتح الفيديو
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const cabinModalAr = document.getElementById('cabinModalAr');
+  cabinModalAr.addEventListener('hidden.bs.modal', () => {
+    const v = document.getElementById('cabinVideoAr');
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  });
+</script>
 </body>
 </html>
